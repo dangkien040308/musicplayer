@@ -1,0 +1,84 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Phudu:wght@500&family=Varela+Round&display=swap');
+
+/* player.js */
+.music_player {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+}
+/* playerControl.js */
+.music_playercontrol {
+      margin-top: 200px;
+      padding: 10px;
+}
+.control_btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    margin: 0 20px;
+    cursor: pointer;
+}
+.control_btn:hover {
+    opacity: 0.5;
+    background-color: #554f57;
+}
+/* playerDetail.js */
+.title_song {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+.song_name {
+    font-size: 60px;
+    font-weight: bold;
+    padding: 10px;
+}
+.song_artists {
+    text-align: center;
+    margin-top: 10px;
+}
+/* listItem.js */
+.list_item {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #a59a9a;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+.list_item:hover {
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+.list_item.active {
+    cursor: pointer;
+    color: #09991d;
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+.list_content {
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.list_title {
+    font-weight: bolder;
+    font-size: 20px;
+}
+.list_icon {
+    font-size: 25px;
+}
