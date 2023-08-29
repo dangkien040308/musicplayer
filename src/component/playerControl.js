@@ -3,7 +3,7 @@ import { faForward ,faBackward ,faPlay , faPause } from "@fortawesome/free-solid
 import "./main.css"
 
 
-function PlayerControl({setIsPlaying,isPlaying,SkipSong,ele}) {
+function PlayerControl({setIsPlaying,isPlaying,SkipSong}) {
     
     const handleClick = (bool) => {
         SkipSong(bool)

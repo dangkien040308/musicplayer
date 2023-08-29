@@ -12,8 +12,9 @@
 }
 /* playerControl.js */
 .music_playercontrol {
-      margin-top: 200px;
-      padding: 10px;
+    margin-top: 200px;
+    height: 70%;
+
 }
 .control_btn {
     border-radius: 50%;
@@ -56,18 +57,17 @@
     color: #a59a9a;
     margin-bottom: 10px;
     border-radius: 15px;
+    margin-left: 20px;
 }
 .list_item:hover {
     cursor: pointer;
     color: #fff;
     transition: 0.3s;
-    transform: scale(1.1);
 }
 .list_item.active {
     cursor: pointer;
     color: #09991d;
     transition: 0.3s;
-    transform: scale(1.1);
 }
 .list_content {
     display: flex;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css"
 import Player from "./component/player";
 import ListItem from "./component/listItem";
@@ -74,17 +74,14 @@ function App() {
   
   
 
- useEffect( () => {
-   
-  },[])
-  
    
 
   return (
    <div className="main">
       <div className="listPlayer">
         {songs.map( (song,id) => (
-              <ListItem title={song.title} artist={song.artists} key={id} active = {id === curentSongIndex ? true : false} />
+              <ListItem title={song.title} artist={song.artists} key={id} 
+              active = {id === curentSongIndex ? true : false} />
         ))}
       </div>
       <Player setCurrentSongIndex = {setCurrentSongIndex} curentSongIndex={curentSongIndex} songs={songs}/>

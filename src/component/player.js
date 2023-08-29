@@ -23,10 +23,9 @@ function Player ({setCurrentSongIndex,curentSongIndex,songs}) {
             setIsPlaying(false)
             setTimeout( () => {
             setIsPlaying(true)
-            console.log(curentSongIndex)
             },1000)
         }
-    } ,3000)
+    } ,2000)
   },[])
 
     const SkipSong = (bool) => {
@@ -34,10 +33,11 @@ function Player ({setCurrentSongIndex,curentSongIndex,songs}) {
              setCurrentSongIndex(() => {
                 let index = curentSongIndex
                 index++ 
-
+                
                 if (index > songs.length - 1) {
                     index = 0 
                 }
+                console.log(curentSongIndex++)
                 return index
              })
         } else {
@@ -57,7 +57,7 @@ function Player ({setCurrentSongIndex,curentSongIndex,songs}) {
         <div className="music_player">
             <audio src={songs[curentSongIndex].src} ref={audioElement}> </audio>
             <PlayerDetail song={songs[curentSongIndex]} />
-            <PlayerControl isPlaying={isPlaying} setIsPlaying={setIsPlaying} SkipSong={SkipSong} ele={audioElement} />
+            <PlayerControl isPlaying={isPlaying} setIsPlaying={setIsPlaying} SkipSong={SkipSong}/>
         </div>
     )
 }
