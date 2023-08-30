@@ -1,4 +1,5 @@
 import React from 'react';
+import { memo } from 'react';
 
 const PlayerDetail = ({song}) => {
     return (
@@ -9,4 +10,4 @@ const PlayerDetail = ({song}) => {
     );
 };
 
-export default PlayerDetail;
+export default memo(PlayerDetail)
