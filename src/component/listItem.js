@@ -2,6 +2,7 @@ import './main.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
 import {faHeart as solidHeart} from "@fortawesome/free-solid-svg-icons"
+import { memo } from 'react'
 
 
 function ListItem ({title , artist ,active}) {
@@ -18,4 +19,4 @@ function ListItem ({title , artist ,active}) {
     );
 };
 
-export default ListItem;
+export default memo(ListItem);

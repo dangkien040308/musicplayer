@@ -29,7 +29,7 @@ function Player ({setCurrentSongIndex,curentSongIndex,songs}) {
   },[])
 
     const SkipSong = (bool) => {
-        if (bool) {
+        if (bool === true) {
              setCurrentSongIndex(() => {
                 let index = curentSongIndex
                 index++ 
@@ -37,10 +37,10 @@ function Player ({setCurrentSongIndex,curentSongIndex,songs}) {
                 if (index > songs.length - 1) {
                     index = 0 
                 }
-                console.log(curentSongIndex++)
+                console.log(index,' ',curentSongIndex)
                 return index
              })
-        } else {
+        } else if (bool === false) {
             setCurrentSongIndex(() => {
                 let index = curentSongIndex
                 index--
