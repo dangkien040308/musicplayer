@@ -11,8 +11,7 @@
 .listPlayer {
     max-height: 50vh;
     overflow-y: scroll;
-    width: 35%;
-    flex-direction: column;
+    width: 30%;
     margin-left: 50px;
 }
 /* width */

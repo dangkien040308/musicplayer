@@ -24,14 +24,15 @@ import vebenanh from './music/vebenanh.mp3'
 import tinhve from './music/tinveremix.mp3'
 import changthetimduocem from './music/changthetimduocem.mp3'
 import haikhongbabay from './music/2037.mp3'
+import trochuyenvoithoigian from './music/trochuyenvoithoigian.mp3'
 
 
 function App() {
-  const [curentSongIndex , setCurrentSongIndex] = useState(0)
+  const [currentSongIndex , setCurrentSongIndex] = useState(0)
   
   
 
-  const songs = [
+  const [songs,setSongs] = useState([
     {
       src : coaynoi,
       title : "Cô Ấy Nói" ,
@@ -41,6 +42,11 @@ function App() {
     src : haikhongbabay,
     title : "2037" ,
     artists : "Tuấn Võ"
+   },
+   {
+    src : trochuyenvoithoigian,
+    title : "Trò Chuyện Với Thời Gian" ,
+    artists : "Tryle"
    },
    {
     src : vebenanh,
@@ -139,7 +145,7 @@ function App() {
    },
    
 
-  ]
+  ])
   
 
 
@@ -149,11 +155,12 @@ function App() {
    <div className="main">
       <div className="listPlayer">
         {songs.map( (song,id) => (
-              <ListItem title={song.title} artist={song.artists} key={id} 
-              active = {id === curentSongIndex ? true : false} />
+              <ListItem title={song.title} artist={song.artists} key={id}  
+              active = {id === currentSongIndex ? true : false}
+              />
         ))}
       </div>
-      <Player setCurrentSongIndex = {setCurrentSongIndex} curentSongIndex={curentSongIndex} songs={songs}/>
+      <Player setCurrentSongIndex = {setCurrentSongIndex} currentSongIndex={currentSongIndex} songs={songs}/>
     </div>
   );
 }

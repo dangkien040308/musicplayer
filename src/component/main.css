@@ -12,9 +12,8 @@
 }
 /* playerControl.js */
 .music_playercontrol {
-    margin-top: 200px;
+    margin-top: 150px;
     height: 70%;
-
 }
 .control_btn {
     border-radius: 50%;
@@ -38,7 +37,7 @@
     color: #fff;
 }
 .song_name {
-    font-size: 60px;
+    font-size: 55px;
     font-weight: bold;
     padding: 10px;
 }
@@ -52,12 +51,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     background-color: rgba(0, 0, 0, 0.5);
     color: #a59a9a;
     margin-bottom: 10px;
     border-radius: 15px;
-    margin-left: 20px;
 }
 .list_item:hover {
     cursor: pointer;

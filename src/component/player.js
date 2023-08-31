@@ -3,15 +3,17 @@ import PlayerControl from "./playerControl"
 import PlayerDetail from "./playerDetail"
 
 
-function Player ({setCurrentSongIndex,curentSongIndex,songs}) {
+function Player ({setCurrentSongIndex,currentSongIndex,songs}) {
     const audioElement = useRef()
     const [isPlaying,setIsPlaying] = useState(false)
     const handleEnded = () => {
         SkipSong(true)
-        setIsPlaying(false)
+        setTimeout( () => {
+            setIsPlaying(false)
+        },10)
         setTimeout( () => {
             setIsPlaying(true)
-        },1000)
+        },100)
     }
   useEffect( () => {
       if (isPlaying) {
@@ -25,7 +27,7 @@ function Player ({setCurrentSongIndex,curentSongIndex,songs}) {
     const SkipSong = (bool) => {
         if (bool === true) {
              setCurrentSongIndex(() => {
-                let index = curentSongIndex
+                let index = currentSongIndex
                 index++ 
                 
                 if (index > songs.length - 1) {
@@ -36,7 +38,7 @@ function Player ({setCurrentSongIndex,curentSongIndex,songs}) {
              })
         } else if (bool === false) {
             setCurrentSongIndex(() => {
-                let index = curentSongIndex
+                let index = currentSongIndex
                 index--
 
                 if (index < 0) {
@@ -49,8 +51,8 @@ function Player ({setCurrentSongIndex,curentSongIndex,songs}) {
 
     return (
         <div className="music_player">
-            <audio src={songs[curentSongIndex].src} ref={audioElement} onEnded={handleEnded}> </audio>
-            <PlayerDetail song={songs[curentSongIndex]} />
+            <audio src={songs[currentSongIndex].src} ref={audioElement} onEnded={handleEnded}> </audio>
+            <PlayerDetail song={songs[currentSongIndex]} />
             <PlayerControl isPlaying={isPlaying} setIsPlaying={setIsPlaying} SkipSong={SkipSong}/>
         </div>
     )

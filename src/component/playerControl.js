@@ -3,14 +3,19 @@ import { faForward ,faBackward ,faPlay , faPause } from "@fortawesome/free-solid
 import "./main.css"
 
 
-function PlayerControl({setIsPlaying,isPlaying,SkipSong}) {
+function PlayerControl({setIsPlaying,isPlaying,SkipSong,currentTime}) {
     
     const handleClick = (bool) => {
-        SkipSong(bool)
-        setIsPlaying(false)
-        setTimeout( () => {
-            setIsPlaying(true)
-        },1000)
+        setTimeout ( () => {
+            SkipSong(bool)
+            setTimeout( () => {
+                setIsPlaying(false)
+            },10)
+            setTimeout( () => {
+                setIsPlaying(true)
+            },100)
+        },100)
+        
     }
 
     return (
