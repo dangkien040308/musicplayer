@@ -5,7 +5,7 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 jobs : 
  build:
-  runs-on : unbutu-latest
+  runs-on : ubuntu-latest
   steps: 
    - uses : action/checkout@v2
    - uses : action/setup-node@v1
