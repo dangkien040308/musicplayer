@@ -422,6 +422,7 @@ function App() {
         {songs.map( (song,id) => (
               <ListItem title={song.title} artist={song.artists} key={id}  
               active = {id === currentSongIndex ? true : false}
+              onClick={() => setCurrentSongIndex(id)}
               />
         ))}
       </div>

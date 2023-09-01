@@ -5,9 +5,9 @@ import {faHeart as solidHeart} from "@fortawesome/free-solid-svg-icons"
 import { memo } from 'react'
 
 
-function ListItem ({title , artist ,active}) {
+function ListItem ({title , artist ,active,onClick}) {
     return (
-        <div className={active ? 'list_item  active' : 'list_item'} >
+        <div className={active ? 'list_item  active' : 'list_item'} onClick={onClick} >
             <div className='list_content'>
               <div className='list_title'>{title}</div>
               <div className='list_artist'>{artist}</div>
