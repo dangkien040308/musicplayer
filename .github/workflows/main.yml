@@ -5,11 +5,11 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 jobs : 
  build:
-  runs-on:unbutu-latest
+  runs-on : unbutu-latest
   steps: 
    - uses : action/checkout@v2
    - uses : action/setup-node@v1
-      with:
+     with :
        node-version : 18
    - run : npm ci
    - run: npm install --global vercel@latest
