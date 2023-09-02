@@ -1,11 +1,11 @@
-import { useEffect ,useState ,useRef , createContext} from "react"
+import { useEffect  ,useRef ,useState } from "react"
 import PlayerControl from "./playerControl"
 import PlayerDetail from "./playerDetail"
 
-const Data = createContext()
 
 function Player ({setCurrentSongIndex,currentSongIndex,songs,setIsPlaying,isPlaying}) {
     const audioElement = useRef()
+    const [volumn , setVolumn] = useState(50)
     
     const handleEnded = () => {
         SkipSong(true)
@@ -24,6 +24,9 @@ function Player ({setCurrentSongIndex,currentSongIndex,songs,setIsPlaying,isPlay
        }
     },[isPlaying])
 
+    useEffect( () => {
+        audioElement.current.volume = volumn / 100
+      },[volumn])
 
     const SkipSong = (bool) => {
         if (bool === true) {
@@ -54,7 +57,7 @@ function Player ({setCurrentSongIndex,currentSongIndex,songs,setIsPlaying,isPlay
         <div className="music_player">
             <audio src={songs[currentSongIndex].src} ref={audioElement} onEnded={handleEnded}> </audio>
             <PlayerDetail song={songs[currentSongIndex]} />
-            <PlayerControl isPlaying={isPlaying} setIsPlaying={setIsPlaying} SkipSong={SkipSong}/>
+            <PlayerControl isPlaying={isPlaying} setIsPlaying={setIsPlaying} SkipSong={SkipSong} volumn={volumn} setVolumn={setVolumn}/>
         </div>
     )
 }
