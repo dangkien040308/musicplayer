@@ -1,11 +1,12 @@
-import { useEffect ,useState ,useRef} from "react"
+import { useEffect ,useState ,useRef , createContext} from "react"
 import PlayerControl from "./playerControl"
 import PlayerDetail from "./playerDetail"
 
+const Data = createContext()
 
-function Player ({setCurrentSongIndex,currentSongIndex,songs}) {
+function Player ({setCurrentSongIndex,currentSongIndex,songs,setIsPlaying,isPlaying}) {
     const audioElement = useRef()
-    const [isPlaying,setIsPlaying] = useState(false)
+    
     const handleEnded = () => {
         SkipSong(true)
         setTimeout( () => {

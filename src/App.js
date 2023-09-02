@@ -73,7 +73,7 @@ import windfall from './music/windfall.mp3'
 
 function App() {
   const [currentSongIndex , setCurrentSongIndex] = useState(0)
-  
+  const [isPlaying,setIsPlaying] = useState(false)
   
 
   const songs = [
@@ -354,7 +354,7 @@ function App() {
    },
    {
     src : nevada,
-    title : "Yêu 5" ,
+    title : "Nevada" ,
     artists : "Monstercat"
    },
    {
@@ -422,11 +422,21 @@ function App() {
         {songs.map( (song,id) => (
               <ListItem title={song.title} artist={song.artists} key={id}  
               active = {id === currentSongIndex ? true : false}
-              onClick={() => setCurrentSongIndex(id)}
+              onClick={() => {
+                setCurrentSongIndex(id)
+
+                setTimeout( () => {
+                setIsPlaying(false)
+                },10)
+
+                setTimeout( () => {
+                setIsPlaying(true)
+                },100)
+                }}
               />
         ))}
       </div>
-      <Player setCurrentSongIndex = {setCurrentSongIndex} currentSongIndex={currentSongIndex} songs={songs}/>
+      <Player isPlaying={isPlaying} setIsPlaying={setIsPlaying} setCurrentSongIndex = {setCurrentSongIndex} currentSongIndex={currentSongIndex} songs={songs}/>
     </div>
   );
 }

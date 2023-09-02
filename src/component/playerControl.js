@@ -9,7 +9,7 @@ function PlayerControl({setIsPlaying,isPlaying,SkipSong}) {
     const sleep = ms => new Promise(r => setTimeout(r, ms));
     const [delay , setDelay] = useState(false)
 
-    const handleClick = async(bool) => {
+     const handleClick = async(bool) => {
         while(delay) await sleep(100)
         setDelay(true)
         SkipSong(bool)
