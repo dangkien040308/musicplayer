@@ -1,0 +1,21 @@
+@media screen and (max-width : 1000px) {
+    .main {
+        justify-content: center;
+        flex-direction: column;
+        height: auto;
+        background-size: cover;
+    }
+    .listPlayer {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .title_song {
+       margin-bottom: 50px;
+    }
+    .song_name {
+        font-size: 20px;
+    }
+
+}

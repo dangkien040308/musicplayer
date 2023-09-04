@@ -1,5 +1,6 @@
 import React from 'react';
 import { memo } from 'react';
+import './responsive.css'
 
 const PlayerDetail = ({song}) => {
     return (

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css"
+import './component/responsive.css'
 import Player from "./component/player";
 import ListItem from "./component/listItem";
 
@@ -418,6 +419,7 @@ function App() {
 
   return (
    <div className="main">
+   <Player isPlaying={isPlaying} setIsPlaying={setIsPlaying} setCurrentSongIndex = {setCurrentSongIndex} currentSongIndex={currentSongIndex} songs={songs}/>
       <div className="listPlayer">
         {songs.map( (song,id) => (
               <ListItem title={song.title} artist={song.artists} key={id}  
@@ -436,7 +438,7 @@ function App() {
               />
         ))}
       </div>
-      <Player isPlaying={isPlaying} setIsPlaying={setIsPlaying} setCurrentSongIndex = {setCurrentSongIndex} currentSongIndex={currentSongIndex} songs={songs}/>
+      
     </div>
   );
 }

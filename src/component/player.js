@@ -1,7 +1,7 @@
 import { useEffect  ,useRef ,useState } from "react"
 import PlayerControl from "./playerControl"
 import PlayerDetail from "./playerDetail"
-
+import './responsive.css'
 
 function Player ({setCurrentSongIndex,currentSongIndex,songs,setIsPlaying,isPlaying}) {
     const audioElement = useRef()
@@ -57,7 +57,8 @@ function Player ({setCurrentSongIndex,currentSongIndex,songs,setIsPlaying,isPlay
         <div className="music_player">
             <audio src={songs[currentSongIndex].src} ref={audioElement} onEnded={handleEnded}> </audio>
             <PlayerDetail song={songs[currentSongIndex]} />
-            <PlayerControl isPlaying={isPlaying} setIsPlaying={setIsPlaying} SkipSong={SkipSong} volumn={volumn} setVolumn={setVolumn}/>
+            <PlayerControl isPlaying={isPlaying} setIsPlaying={setIsPlaying} 
+            SkipSong={SkipSong} setVolumn={setVolumn} audioElement={audioElement.current}/>
         </div>
     )
 }

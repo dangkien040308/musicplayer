@@ -3,6 +3,7 @@ import { faForward ,faBackward ,faPlay , faPause } from "@fortawesome/free-solid
 import "./main.css"
 import { useState } from "react"
 import Volumn from "./volumn";
+import './responsive.css'
 
 
 function PlayerControl({setIsPlaying,isPlaying,SkipSong,setVolumn}) {    
@@ -20,7 +21,7 @@ function PlayerControl({setIsPlaying,isPlaying,SkipSong,setVolumn}) {
         setTimeout( () => {
             setDelay(false)
         },100)
-            
+        console.log(isPlaying)
     }
 
     return (
