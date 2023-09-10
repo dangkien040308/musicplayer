@@ -18,7 +18,18 @@ function Player ({setCurrentSongIndex,currentSongIndex,songs,setIsPlaying,isPlay
     }
   useEffect( () => {
       if (isPlaying) {
+        if (audioElement.current.readyState === 4) 
+        {
           audioElement.current.play()
+        }
+        else {
+            const playWhenReady = () => {
+                audioElement.current.play();
+                // Remove the event listener once the audio is ready
+                audioElement.current.removeEventListener('canplay', playWhenReady);
+            };
+            audioElement.current.addEventListener('canplay', playWhenReady);
+        }
        } else {
            audioElement.current.pause()
        }
@@ -55,7 +66,7 @@ function Player ({setCurrentSongIndex,currentSongIndex,songs,setIsPlaying,isPlay
 
     return (
         <div className="music_player">
-            <audio src={songs[currentSongIndex].src} ref={audioElement} onEnded={handleEnded}> </audio>
+            <audio src={songs[currentSongIndex].src} ref={audioElement} onEnded={handleEnded} > </audio>
             <PlayerDetail song={songs[currentSongIndex]} />
             <PlayerControl isPlaying={isPlaying} setIsPlaying={setIsPlaying} 
             SkipSong={SkipSong} setVolumn={setVolumn} audioElement={audioElement.current}/>
